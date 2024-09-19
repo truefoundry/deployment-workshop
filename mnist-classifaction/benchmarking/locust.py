@@ -12,6 +12,6 @@ class PredictUser(HttpUser):
                 "Content-Type": "application/json"
             },
             json={
-                "url": "https://conx.readthedocs.io/en/latest/_images/MNIST_6_0.png"
+                "url": "https://github.com/truefoundry/deployment-workshop/blob/main/mnist-classifaction/deploy_model/sample_images/1.jpg?raw=true"
             }
         )
