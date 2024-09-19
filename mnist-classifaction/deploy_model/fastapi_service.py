@@ -11,11 +11,13 @@ model = load_model(model_path)
 
 
 class ImageUrl(BaseModel):
-    url: str = "https://conx.readthedocs.io/en/latest/_images/MNIST_6_0.png"
+    url: str = "https://github.com/truefoundry/deployment-workshop/blob/main/mnist-classifaction/deploy_model/sample_images/1.jpg?raw=true"
 
 
 def load_image(img_url: str) -> np.ndarray:
-    img_path = tf.keras.utils.get_file("image.jpg", img_url)
+    # generate random name for the image
+    rand_num = np.random.randint(10000)
+    img_path = tf.keras.utils.get_file(f"image{rand_num}.jpg", img_url)
     img = tf.keras.preprocessing.image.load_img(img_path, target_size=(28, 28))
     img_arr = tf.keras.preprocessing.image.img_to_array(img)
     return img_arr
