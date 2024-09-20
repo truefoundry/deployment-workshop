@@ -12,7 +12,9 @@ from truefoundry.deploy import (
     TruefoundryArtifactSource,
 )
 
-logging.basicConfig(level=logging.INFO, format="%(asctime)s [%(name)s] %(levelname)-8s %(message)s")
+logging.basicConfig(
+    level=logging.INFO, format="%(asctime)s [%(name)s] %(levelname)-8s %(message)s"
+)
 
 
 def str_or_none(value):
@@ -20,7 +22,13 @@ def str_or_none(value):
 
 
 parser = argparse.ArgumentParser()
-parser.add_argument("--name", required=False, default="mnist-classifier", type=str, help="Name of the application.")
+parser.add_argument(
+    "--name",
+    required=False,
+    default="mnist-classifier",
+    type=str,
+    help="Name of the application.",
+)
 parser.add_argument(
     "--workspace_fqn",
     "--workspace-fqn",
